@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Zaheer Ahammad | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* ---------- Navbar ---------- */
+
+        .navbar {
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e2e8f0;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* ---------- Hero Section ---------- */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 8%;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-text h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .hero-text span {
+            color: #38bdf8;
+        }
+
+        .hero-text p {
+            max-width: 600px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            background: #0ea5e9;
+        }
+
+        .btn-secondary {
+            border: 2px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .btn-secondary:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 320px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 5px solid #38bdf8;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+        }
+
+        /* ---------- Sections ---------- */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+            color: #38bdf8;
+        }
+
+        /* ---------- About ---------- */
+
+        .about {
+            background: #111827;
+            border-radius: 20px;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+            color: #cbd5e1;
+            font-size: 18px;
+        }
+
+        /* ---------- Skills ---------- */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            background: #334155;
+        }
+
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        /* ---------- Education & Project ---------- */
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        /* ---------- Contact ---------- */
+
+        .contact-box {
+            background: #111827;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .contact-box p {
+            margin: 12px 0;
+            color: #cbd5e1;
+            font-size: 18px;
+        }
+
+        /* ---------- Footer ---------- */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+            margin-top: 50px;
+        }
+
+        /* ---------- Responsive ---------- */
+
+        @media(max-width:768px) {
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">Zaheer.</div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h3>Hello, I'm</h3>
+
+            <h1>Dudekula <span>Zaheer Ahammad</span></h1>
+
+            <p>
+                Computer Science Engineering student specializing in AI & ML.
+                Passionate about Python Development, Web Development, and building
+                modern software solutions that solve real-world problems.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="C:\Users\gnani\Downloads\zaheer pic.jpeg" alt="Zaheer Photo">
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+
+            <div class="about-content">
+
+                <p>
+                    I am a dedicated Computer Science undergraduate with hands-on
+                    experience in Python and Full Stack Web Development. I enjoy
+                    creating responsive and user-friendly applications. My major
+                    project includes developing a Learning Management System (LMS)
+                    to improve educational accessibility and simplify course
+                    management for students and administrators.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Backend development and automation.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>Responsive website development.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>HTML & CSS</h3>
+                <p>Modern UI design and layouts.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Java</h3>
+                <p>Object-oriented programming concepts.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>C Programming</h3>
+                <p>Problem solving and fundamentals.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>AI & ML Basics</h3>
+                <p>Machine learning fundamentals.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Education -->
+
+    <section id="education">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+
+                <h3>B.Tech - CSE (AI & ML)</h3>
+
+                <p>
+                    Madanapalle Institute of Technology & Science
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Intermediate</h3>
+
+                <p>Percentage: 85.5%</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>SSC</h3>
+
+                <p>Percentage: 96%</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <h2 class="section-title">Projects</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+
+                <h3>Learning Management System</h3>
+
+                <p>
+                    Developed an LMS platform where students can enroll in courses,
+                    track progress, and access study materials while admins manage
+                    users and course content efficiently.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>NASSCOM Digital Course</h3>
+
+                <p>
+                    Successfully completed a 30-hour digital training program
+                    organized by NASSCOM.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-box">
+
+            <p><strong>Location:</strong> Madanapalle, Andhra Pradesh</p>
+
+            <p><strong>Phone:</strong> +91 9063075755</p>
+
+            <p><strong>Email:</strong> zaheerahammad11@gmail.com</p>
+
+            <p><strong>Languages:</strong> English, Telugu, Hindi, Urdu</p>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>© 2026 Zaheer Ahammad | All Rights Reserved</p>
+
+    </footer>
+
+</body>
+
+</html>
